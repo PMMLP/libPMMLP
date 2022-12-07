@@ -1,0 +1,8 @@
+name: PMMLP
+version: 1.0.0
+api: 4.0.0
+author: Matze
+description: libPMMPL - Made by the PMMLP-Team
+main: pmmlp\PMMLP
+depend:
+  - Customies
