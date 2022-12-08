@@ -16,10 +16,10 @@ class ConfigParser {
         foreach($recipe["items"] as $key => $stringItem) {
             $ingredients[$key] = StringToItemParser::parse($stringItem);
         }
-        $result ??= [StringToItemParser::parse($recipe["result"])];
+        $result ??= StringToItemParser::parse($recipe["result"]);
         if($recipe["shaped"]) {
-            return new ShapedRecipe($recipe["shape"], $ingredients, $result);
+            return new ShapedRecipe($recipe["shape"], $ingredients, [$result]);
         }
-        return new ShapelessRecipe($ingredients, $result);
+        return new ShapelessRecipe($ingredients, [$result]);
     }
 }
